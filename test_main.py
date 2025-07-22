@@ -7,7 +7,14 @@ test_user = {
     "user_id": 1,
     "name": "Mary",
     "email": "mary@atu.ie",
-    "age": 22
+    "age": 22,
+    "address": {
+        "street": "Main Street",
+        "number": 1,
+        "county": "Galway",
+        "country": "Ireland",
+        "eircode": "H91F123"
+    }
 }
 def setup_function():
     print("Clearing users, length before clear:", len(users))
@@ -28,7 +35,14 @@ def test_put_user():
         "user_id": 2,
         "name": "Tony",
         "email": "tony@atu.ie",
-        "age": 22
+        "age": 22,
+        "address": {
+            "street": "Main Street",
+            "number": 1,
+            "county": "Galway",
+            "country": "Ireland",
+            "eircode": "H91F123"
+        }
     }
     client.post("/api/users", json=test_user)
     client.post("/api/users", json=user)
@@ -40,7 +54,14 @@ def test_put_user():
         "user_id": 2,
         "name": "Tom",
         "email": "tom@atu.ie",
-        "age": 52
+        "age": 52,
+        "address": {
+            "street": "Main Street",
+            "number": 1,
+            "county": "Galway",
+            "country": "Ireland",
+            "eircode": "H91F123"
+        }
     }
     response = client.put("/api/users/2", json=user)
     assert response.status_code == 200
@@ -58,7 +79,14 @@ def test_delete_user():
         "user_id": 3,
         "name": "Mary",
         "email": "mary@atu.ie",
-        "age": 22
+        "age": 22,
+        "address": {
+            "street": "Main Street",
+            "number": 1,
+            "county": "Galway",
+            "country": "Ireland",
+            "eircode": "H91F123"
+        }
     }
     response = client.post("/api/users", json=user)
     assert response.json()["name"] == "Mary"
