@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from schemas import User, Address
+from app.schemas import User, Address
 
 app = FastAPI()   # create a FastAPI instance
 users = []
