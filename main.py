@@ -8,7 +8,7 @@ users = []
 def get_users():
     return users
 
-@app.get("/api/user/{user_id}")
+@app.get("/api/users/{user_id}")
 def get_user(user_id: int):
     for i, u in enumerate(users):
         if u.user_id == user_id:
